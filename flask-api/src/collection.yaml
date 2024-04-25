@@ -1,0 +1,69 @@
+_type: export
+__export_format: 4
+__export_date: 2024-04-25T05:37:58.225Z
+__export_source: insomnia.desktop.app:v9.0.0
+resources:
+  - _id: req_14454f19efc944a7b3c6a758a5b93567
+    parentId: wrk_a189e58e95ed4b9397a419eacc0f8912
+    modified: 1714023403264
+    created: 1714023124589
+    url: http://127.0.0.1:5000/tasks
+    name: New Request
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "title": "Enviar atividade ponderada",
+          "description": "Criação de API REST síncrona com Flask."
+        }
+    preRequestScript: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/9.0.0
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: false
+      username: user
+      password: "1234"
+    metaSortKey: -1714023124589
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_a189e58e95ed4b9397a419eacc0f8912
+    parentId: null
+    modified: 1714023115899
+    created: 1714023115899
+    name: Flask API
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: env_e9cd8b83376ca1b04b54ccdd790c9a042540ba22
+    parentId: wrk_a189e58e95ed4b9397a419eacc0f8912
+    modified: 1714023115901
+    created: 1714023115901
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1714023115901
+    _type: environment
+  - _id: jar_e9cd8b83376ca1b04b54ccdd790c9a042540ba22
+    parentId: wrk_a189e58e95ed4b9397a419eacc0f8912
+    modified: 1714023115901
+    created: 1714023115901
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
