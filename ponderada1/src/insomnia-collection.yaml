@@ -1,0 +1,204 @@
+_type: export
+__export_format: 4
+__export_date: 2024-05-06T04:34:58.245Z
+__export_source: insomnia.desktop.app:v9.0.0
+resources:
+  - _id: req_352e4f451df94c348cc868c90596d272
+    parentId: wrk_cb06d96df9ef4d368a78344f2bd1aa5e
+    modified: 1714969935555
+    created: 1714969475843
+    url: "{{baseUrl}}"
+    name: Requisição GET Inicial
+    description: ""
+    method: GET
+    body: {}
+    preRequestScript: ""
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/9.0.0
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: false
+      username: user
+      password: "1234"
+    metaSortKey: -1714495382534
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_cb06d96df9ef4d368a78344f2bd1aa5e
+    parentId: null
+    modified: 1714966733050
+    created: 1714966733050
+    name: Ponderada 1
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_f07857cc0e9d4819b6a3d505598b55c8
+    parentId: wrk_cb06d96df9ef4d368a78344f2bd1aa5e
+    modified: 1714969520954
+    created: 1714967640479
+    url: "{{baseUrl}}/tasks"
+    name: Requisição GET Task
+    description: ""
+    method: GET
+    body: {}
+    preRequestScript: ""
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/9.0.0
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: false
+      username: user
+      password: "1234"
+    metaSortKey: -1714967640479
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_73c218a611c840d3b831279eaf072930
+    parentId: wrk_cb06d96df9ef4d368a78344f2bd1aa5e
+    modified: 1714969504104
+    created: 1714968049458
+    url: "{{baseUrl}}/tasks"
+    name: Requisição POST Task
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id": 2,
+        	"title": "Atividade 2",
+        	"description": "Criação de API assíncrona com FastAPI",
+        	"done": false
+        }
+    preRequestScript: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/9.0.0
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: false
+      username: user
+      password: "1234"
+    metaSortKey: -1714968049458
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_71d8ff07abc44fec9c9f70c768febe9a
+    parentId: wrk_cb06d96df9ef4d368a78344f2bd1aa5e
+    modified: 1714969508397
+    created: 1714968100817
+    url: "{{baseUrl}}/tasks/7"
+    name: Requisição UPDATE Task
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"description": "Criação de API assíncrona com FastAPI",
+        	"done": false,
+        	"id": 7,
+        	"title": "Atividade 3"
+        }
+    preRequestScript: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/9.0.0
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: false
+      username: user
+      password: "1234"
+    metaSortKey: -1714968100817
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_c6361e681deb4d929b31f6cd60d9b17f
+    parentId: wrk_cb06d96df9ef4d368a78344f2bd1aa5e
+    modified: 1714969570477
+    created: 1714968190253
+    url: "{{baseUrl}}/tasks/5"
+    name: Requisição DELETE Task
+    description: ""
+    method: DELETE
+    body: {}
+    preRequestScript: ""
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/9.0.0
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: false
+      username: user
+      password: "1234"
+    metaSortKey: -1714968190253
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_5e86d22d33df1de30f4f2721f0048edcb4e5418b
+    parentId: wrk_cb06d96df9ef4d368a78344f2bd1aa5e
+    modified: 1714969861330
+    created: 1714966733052
+    name: Base Environment
+    data:
+      baseUrl: http://127.0.0.1:5000
+    dataPropertyOrder:
+      "&":
+        - baseUrl
+    color: null
+    isPrivate: false
+    metaSortKey: 1714966733052
+    _type: environment
+  - _id: jar_5e86d22d33df1de30f4f2721f0048edcb4e5418b
+    parentId: wrk_cb06d96df9ef4d368a78344f2bd1aa5e
+    modified: 1714966733053
+    created: 1714966733053
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar

@@ -1,0 +1,145 @@
+swagger: "2.0"
+info:
+  description: "API de gerenciamento de tarefas."
+  version: "1.0.0"
+  title: "Tasks API"
+basePath: "/"
+tags:
+- name: "tasks"
+  description: "Operações relacionadas a tarefas"
+schemes:
+- "http"
+paths:
+  /tasks:
+    get:
+      tags:
+      - "tasks"
+      summary: "Obter todas as tarefas"
+      description: "Retorna uma lista de todas as tarefas."
+      responses:
+        200:
+          description: "Operação bem-sucedida"
+          schema:
+            type: "object"
+            properties:
+              tasks:
+                type: "array"
+                items:
+                  $ref: "#/definitions/Task"
+    post:
+      tags:
+      - "tasks"
+      summary: "Criar uma nova tarefa"
+      description: "Cria uma nova tarefa com os dados fornecidos."
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Objeto tarefa para criar"
+        required: true
+        schema:
+          $ref: "#/definitions/TaskInput"
+      responses:
+        201:
+          description: "Tarefa criada com sucesso"
+          schema:
+            $ref: "#/definitions/Task"
+        400:
+          description: "Requisição inválida"
+    delete:
+      tags:
+      - "tasks"
+      summary: "Apagar todas as tarefas"
+      description: "Apaga todas as tarefas."
+      responses:
+        200:
+          description: "Operação bem-sucedida"
+          schema:
+            type: "object"
+            properties:
+              result:
+                type: "boolean"
+  /tasks/{task_id}:
+    get:
+      tags:
+      - "tasks"
+      summary: "Obter uma tarefa por ID"
+      description: "Retorna uma tarefa com o ID fornecido."
+      parameters:
+      - name: "task_id"
+        in: "path"
+        description: "ID da tarefa a ser obtida"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Operação bem-sucedida"
+          schema:
+            $ref: "#/definitions/Task"
+        404:
+          description: "Tarefa não encontrada"
+    put:
+      tags:
+      - "tasks"
+      summary: "Atualizar uma tarefa"
+      description: "Atualiza uma tarefa existente com os dados fornecidos."
+      parameters:
+      - name: "task_id"
+        in: "path"
+        description: "ID da tarefa a ser atualizada"
+        required: true
+        type: "integer"
+      - in: "body"
+        name: "body"
+        description: "Objeto tarefa com os dados atualizados"
+        required: true
+        schema:
+          $ref: "#/definitions/Task"
+      responses:
+        200:
+          description: "Tarefa atualizada com sucesso"
+          schema:
+            $ref: "#/definitions/Task"
+        400:
+          description: "Requisição inválida"
+        404:
+          description: "Tarefa não encontrada"
+    delete:
+      tags:
+      - "tasks"
+      summary: "Apagar uma tarefa por ID"
+      description: "Apaga uma tarefa com o ID fornecido."
+      parameters:
+      - name: "task_id"
+        in: "path"
+        description: "ID da tarefa a ser apagada"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Operação bem-sucedida"
+          schema:
+            type: "object"
+            properties:
+              result:
+                type: "boolean"
+definitions:
+  Task:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+      title:
+        type: "string"
+      description:
+        type: "string"
+      done:
+        type: "boolean"
+  TaskInput:
+    type: "object"
+    properties:
+      title:
+        type: "string"
+      description:
+        type: "string"
+      done:
+        type: "boolean"
