@@ -34,7 +34,7 @@ def verify_password(username, password):
     
 @app.route('/')
 def hello_world():
-    return 'Olá! Acesse o entrypoint /novo para realizar a autenticação de usuário e realizar um novo pedido.'
+    return 'Olá! Acesse o entrypoint /novo para realizar a autenticação de usuário e realizar um novo pedido, /pedidos para consultar os pedidos cadastrados no sistema e /pedidos/{id} para consultar as informações relacionadas a um pedido específico.'
 
 @app.route('/pedidos', methods=['GET'])
 @auth.login_required
@@ -49,17 +49,17 @@ def get_pedido(pedido_id):
     if pedido:
         return jsonify(pedido.to_json())
     else:
-        abort(404, description="Solicitação não encontrada.")
+        abort(404, descricao="Solicitação não encontrada.")
 
 @app.route('/novo', methods=['POST'])
 @auth.login_required
 def create_pedido():
-    if not request.json or not 'title' in request.json:
-        abort(400, description="Bad request. 'title' is required.")
+    if not request.json or not 'pedido' in request.json:
+        abort(400, descricao="Bad request. 'pedido' is required.")
     pedido = Pedido(
-        title=request.json['title'],
-        description=request.json.get('description', ""),
-        done=False
+        pedido=request.json['pedido'],
+        descricao=request.json.get('descricao', ""),
+        atendido=False
     )
     db.session.add(pedido)
     db.session.commit()
@@ -70,13 +70,13 @@ def create_pedido():
 def update_pedido(pedido_id):
     pedido = db.session.get(Pedido, pedido_id)
     if not pedido:
-        abort(404, description="Solicitação não encontrada.")
+        abort(404, descricao="Solicitação não encontrada.")
     if not request.json:
-        abort(400, description="Bad request")
+        abort(400, descricao="Bad request")
     
-    pedido.title = request.json.get('title', pedido.title)
-    pedido.description = request.json.get('description', pedido.description)
-    pedido.done = request.json.get('done', pedido.done)
+    pedido.pedido = request.json.get('pedido', pedido.pedido)
+    pedido.descricao = request.json.get('descricao', pedido.descricao)
+    pedido.atendido = request.json.get('atendido', pedido.atendido)
     db.session.commit()
     return jsonify(pedido.to_json())
 
@@ -85,7 +85,7 @@ def update_pedido(pedido_id):
 def delete_pedido(pedido_id):
     pedido = db.session.get(Pedido, pedido_id)
     if not pedido:
-        abort(404, description="Solicitação não encontrada.")
+        abort(404, descricao="Solicitação não encontrada.")
     db.session.delete(pedido)
     db.session.commit()
     return jsonify({'result': True})

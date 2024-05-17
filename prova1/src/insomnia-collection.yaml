@@ -1,0 +1,174 @@
+_type: export
+__export_format: 4
+__export_date: 2024-05-17T13:17:37.265Z
+__export_source: insomnia.desktop.app:v9.2.0
+resources:
+  - _id: req_013d12c0e2a848f9b6a6445e44ae6a88
+    parentId: wrk_99119f3d9fda4361a8ff73bb391c1a9a
+    modified: 1715951766708
+    created: 1715951710173
+    url: "{{baseUrl}}/pedidos/4"
+    name: DELETE Pedido
+    description: ""
+    method: DELETE
+    body: {}
+    preRequestScript: ""
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/9.2.0
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: false
+      username: user
+      password: "1234"
+    metaSortKey: -1715951710173
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_99119f3d9fda4361a8ff73bb391c1a9a
+    parentId: null
+    modified: 1715950965413
+    created: 1715950965413
+    name: Prova 1
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_f36013ad951c40159f8e3a0719a4481e
+    parentId: wrk_99119f3d9fda4361a8ff73bb391c1a9a
+    modified: 1715951789885
+    created: 1715951637371
+    url: "{{baseUrl}}/pedidos/3"
+    name: UPDATE Pedido
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id": 3,
+        	"pedido": "Pedido 3",
+        	"descricao": "Atualização do terceiro pedido.",
+        	"atendido": true
+        }
+    preRequestScript: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/9.2.0
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: false
+      username: user
+      password: "1234"
+    metaSortKey: -1715951637371
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b1b30f5737c14fe5b6e49e0b90345e1c
+    parentId: wrk_99119f3d9fda4361a8ff73bb391c1a9a
+    modified: 1715951743039
+    created: 1715951207862
+    url: "{{baseUrl}}/novo"
+    name: POST Pedido
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id": 4,
+        	"pedido": "Pedido 4",
+        	"descricao": "Descrição do quarto pedido.",
+        	"atendido": true
+        }
+    preRequestScript: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/9.2.0
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: false
+      username: user
+      password: "1234"
+    metaSortKey: -1715951207862
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d7c0477ef80246929e742c5dc26181e7
+    parentId: wrk_99119f3d9fda4361a8ff73bb391c1a9a
+    modified: 1715951212718
+    created: 1715950970907
+    url: "{{baseUrl}}"
+    name: GET Intro
+    description: ""
+    method: GET
+    body: {}
+    preRequestScript: ""
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/9.2.0
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: false
+      username: user
+      password: "1234"
+    metaSortKey: -1715950970907
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_dcb403ad89df8644c5cd5433a232170c14ca3bf2
+    parentId: wrk_99119f3d9fda4361a8ff73bb391c1a9a
+    modified: 1715951134408
+    created: 1715950965418
+    name: Base Environment
+    data:
+      baseUrl: http://127.0.0.1:5000
+    dataPropertyOrder:
+      "&":
+        - baseUrl
+    color: null
+    isPrivate: false
+    metaSortKey: 1715950965418
+    _type: environment
+  - _id: jar_dcb403ad89df8644c5cd5433a232170c14ca3bf2
+    parentId: wrk_99119f3d9fda4361a8ff73bb391c1a9a
+    modified: 1715950965421
+    created: 1715950965421
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
