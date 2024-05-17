@@ -1,4 +1,4 @@
-<h2>Atividade Prática | EC-M10-P2</h2>
+<h2>Atividade Prática | EC-M10-P1</h2>
 
 O presente diretório destina-se à entrega da atividade prática referente à primeira prova do módulo 10 de Engenharia da Computação.
 
