@@ -1,16 +1,44 @@
-# flutter_app
+<h2>Construção de Aplicativo Híbrido com Flutter</h2>
 
-A new Flutter project.
+Este projeto consiste em um aplicativo mobile desenvolvido em Flutter seguindo o padrão de arquitetura MVC (Model-View-Controller). O back-end da aplicação é desenvolvido em Python, utiliza o framework Flask, e está organizado em microsserviços.
 
-## Getting Started
+## Estrutura do Projeto
 
-This project is a starting point for a Flutter application.
+### Back-end
 
-A few resources to get you started if this is your first Flutter project:
+O backend está organizado em três microsserviços:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. **Serviço de Autenticação (`authentication_service`)**
+2. **Serviço de Dados (`data_service`)**
+3. **Serviço Principal (`main_service`)**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Estrutura padrão utilizada para cada serviço:
+
+```shell
+service/
+├── app.py
+├── config.py
+├── models.py
+├── routes.py
+└── utils.py
+```
+
+### Front-end
+
+A interface do aplicativo foi desenvolvida em Flutter e, até então, conta com uma tela de login.
+
+Estrutura atual:
+
+```shell
+flutter_app/
+├── lib/
+│   ├── controllers/
+│   │   └── login_controller.dart
+│   ├── models/
+│   │   └── user_model.dart
+│   ├── views/
+│   │   ├── login_view.dart
+│   │   └── home_view.dart
+│   └── main.dart
+└── pubspec.yaml
+```
