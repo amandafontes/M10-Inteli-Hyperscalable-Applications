@@ -1,0 +1,30 @@
+# Use postgres/example user/password credentials
+version: '3.9'
+
+services:
+
+  db:
+    image: postgres
+    container_name: postgres
+    restart: on-failure
+    # set shared memory limit when using docker-compose
+    shm_size: 128mb
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: senha
+      POSTGRES_USER: usuario
+
+  adminer:
+    image: adminer
+    restart: on-failure
+    container_name: adminer
+    ports:
+      - 8080:8080
+
+  redis:
+    image: redis
+    restart: on-failure
+    container_name: redis
+    ports:
+      - "6379:6379"

@@ -1,0 +1,9 @@
+{
+    "id": "1",
+    "name": "Nome do Usuário",
+    "email": "meuemail@email.com",
+    "password": "a345f2345c123341",
+    "roles": ["admin", "user"],
+    "criado_em": "2021-06-01T12:00:00Z",
+    "atualizado_em": "2021-06-01T12:00:00Z"
+}
